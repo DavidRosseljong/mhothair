@@ -88,4 +88,4 @@ typings/
 .history
 
 ### Custom ###
-config.json
+# config.json
