@@ -1,0 +1,10 @@
+{
+  "files.exclude": {
+    "__error": "Not found",
+    "package-lock.json": true,
+    "joe.zip": true,
+    "package.json": true,
+    ".vscode": true,
+    "node_modules": true
+  }
+}
