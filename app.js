@@ -19,4 +19,5 @@ client.on('message', msg => require('./events/message.js')(client, msg));
 client.once('ready', () => require('./events/ready.js')(client));
 
 
-client.login(config.key);
+//client.login(config.key);
+client.login(process.env.BOT_TOKEN);
