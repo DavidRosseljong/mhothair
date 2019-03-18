@@ -1,6 +1,6 @@
 module.exports.run = async (client, msg, args) => {
 
-    if( !msg.member.roles.some(r => ["Administrator", "Moderator"].includes(r.name)) )
+    if( !msg.member.roles.some(r => ["Administrator", "Admin", "Moderator", "Mod"].includes(r.name)) )
       return msg.reply("Sorry, you don't have permissions to use this!");
     
     let member = msg.mentions.members.first() || msg.guild.members.get(args[0]);
