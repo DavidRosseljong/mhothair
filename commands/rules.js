@@ -15,7 +15,9 @@ module.exports.run = async (client, msg, args) => {
 	// Message or Embed  
   const rules = new Discord.RichEmbed()
     .setTitle(`### ${msg.guild.name} Rules ###`)
-    .setDescription('Please follow our guidelines to have an awesome time together.')
+		.setDescription('Please follow our guidelines to have an awesome time together.')
+		.setDescription('1. Lorem Ipsum Dolor Sit Amet')
+		.setDescription('2. Lorem Ipsum Dolor Sit Amet')
     .addBlankField()
     .setFooter('Please accept our guidelines and unlock the channels.')
 
