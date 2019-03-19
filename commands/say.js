@@ -1,9 +1,9 @@
 module.exports = (msg, args) => {
 
-  const message = args.join(" ");
+  const newMessage = args.join(" ");
 
   msg.delete().catch(O_o=>{});
 
-  msg.channel.send(message);
+  msg.channel.send(newMessage);
 
-}
+};
