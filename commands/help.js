@@ -1,9 +1,9 @@
 module.exports.run = async (client, msg, args) => {
 
-  const Embed = require('discord.js').RichEmbed();
-
+  const Discord = require('discord.js');
+  
   //Message to send
-  const embed = new Embed()
+  const embed = new Discord.RichEmbed()
     .settitle('Social Media')
     .addBlankField()
     .addField('Facebook', 'www.facebook.com/ValixxOnline')
