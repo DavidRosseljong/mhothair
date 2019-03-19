@@ -8,7 +8,6 @@ module.exports.run = async (client, msg, args) => {
     .addBlankField()
     .addField('Facebook', 'www.facebook.com/ValixxOnline')
     .addField('Twitter', 'www.twitter.com/ValixxOnline')
-    .setFooter(timestamp);
 
   await msg.delete().catch(O_o => {});
 
