@@ -4,7 +4,9 @@ module.exports.run = async (client, msg, args) => {
 
   msg.reply('In what matter do you need assistance?');
 
-    await msg.startsWith('Social')
+    const answer_social = msg.startsWith('social');
+
+    await answer_social().catch((err) => { console.log(err)})
 
       const embed = new Discord.RichEmbed()
         .settitle('Social Media')
@@ -14,7 +16,5 @@ module.exports.run = async (client, msg, args) => {
         .setFooter(timestamp);
         
       msg.reply({ embed });
-  
-  console.log('Working anyway.');
 
 };
