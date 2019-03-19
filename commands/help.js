@@ -4,7 +4,7 @@ module.exports.run = async (client, msg, args) => {
 
   msg.reply('In what matter do you need assistance?');
 
-    if (msg.startsWith('Social')) {
+    await msg.startsWith('Social')
 
       const embed = new Discord.RichEmbed()
         .settitle('Social Media')
@@ -12,12 +12,8 @@ module.exports.run = async (client, msg, args) => {
         .addField('Facebook', 'www.facebook.com/ValixxOnline')
         .addField('Twitter', 'www.twitter.com/ValixxOnline')
         .setFooter(timestamp);
-
-
-
+        
       msg.reply({ embed });
-
-    }
   
   console.log('Working anyway.');
 
