@@ -1,4 +1,4 @@
-module.exports = (client, msg, args) => {
+module.exports.run = async (client, msg, args) => {
 
   const newMessage = args.join(" ");
 
