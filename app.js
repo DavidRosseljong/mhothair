@@ -1,9 +1,11 @@
 const Discord = require('discord.js');
 const config = require('./config.json');
+const settings = require('./inc/settings.js');
 const client = new Discord.Client();
 
 
 client.config = config;
+client.settings = settings;
 client.commands = new Discord.Collection();
 
 
