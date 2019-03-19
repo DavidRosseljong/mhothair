@@ -2,24 +2,23 @@ module.exports.run = async (client, msg, args) => {
 
   await msg.delete().catch(O_o => {});
 
-  msg.reply('Command is working.');
+  msg.reply('In what matter do you need assistance?');
+
+    if (msg.content === 'Social') {
+
+      const embed = new Discord.RichEmbed()
+        .settitle('Social Media')
+        .addBlankField()
+        .addField('Facebook', 'www.facebook.com/ValixxOnline')
+        .addField('Twitter', 'www.twitter.com/ValixxOnline')
+        .setFooter(timestamp);
+
+
+
+      msg.reply({ embed });
+
+    }
+  
+  msg.reply('Working anyway.');
+  
 };
-
-// if (msg.content === config.prefix + ' help') {
-
-//   msg.reply('Do you need help?');
-
-//   if (msg.content === 'yes') {
-
-//     const embed = new Discord.RichEmbed()
-//       .settitle('In what category do you need assistance?')
-
-
-
-//     msg.reply({
-//       embed
-//     });
-
-//   }
-
-// }
