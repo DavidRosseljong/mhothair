@@ -47,9 +47,6 @@ module.exports.run = async (client, msg, args) => {
         msg.reply(modLinks);
         break;
 
-      default:
-        msg.reply('You did not type correctly.');
-
     };
 
   });
