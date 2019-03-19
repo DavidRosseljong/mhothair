@@ -12,7 +12,8 @@ module.exports.run = async (client, msg, args) => {
   await msg.delete().catch(O_o => {});
 
   await msg.channel.awaitMessages(message => {
-    console.log(msg.content);
+    console.log(message);
+    console.log(message.content);
   });
 
 };
