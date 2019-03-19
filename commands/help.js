@@ -4,7 +4,7 @@ module.exports.run = async (client, msg, args) => {
   
   //Message to send
   const embed = new Discord.RichEmbed()
-    .settitle('Social Media')
+    .setTitle('Social Media')
     .addBlankField()
     .addField('Facebook', 'www.facebook.com/ValixxOnline')
     .addField('Twitter', 'www.twitter.com/ValixxOnline')
