@@ -4,7 +4,7 @@ module.exports.run = async (client, msg, args) => {
 
   msg.reply('In what matter do you need assistance?');
 
-    if (msg.content === 'Social') {
+    if (msg.startsWith('Social')) {
 
       const embed = new Discord.RichEmbed()
         .settitle('Social Media')
@@ -19,6 +19,6 @@ module.exports.run = async (client, msg, args) => {
 
     }
   
-  msg.reply('Working anyway.');
-  
+  console.log('Working anyway.');
+
 };
