@@ -9,7 +9,7 @@ module.exports.run = async (client, msg, args) => {
     .addBlankField()
     .addField('Social Media', 'social')
     .addField('A List of all my mods', 'mods')
-    .setFooter(timestamp)
+    .setTimestamp()
 
   //Message to send | Social Media Links
   const socialMedia = new Discord.RichEmbed()
@@ -17,7 +17,7 @@ module.exports.run = async (client, msg, args) => {
     .addBlankField()
     .addField('Facebook', 'www.facebook.com/ValixxOnline')
     .addField('Twitter', 'www.twitter.com/ValixxOnline')
-    .setFooter(timestamp)
+    .setTimestamp()
 
   //Message to send | Mod Links
   const modLinks = new Discord.RichEmbed()
@@ -29,7 +29,7 @@ module.exports.run = async (client, msg, args) => {
     .addBlankField()
     .addField('LIF: Forest Village')
     .addField('More Wood per Tree', 'www.valixx-online.de/more-wood-per-tree')
-    .setFooter(timestamp)
+    .setTimestamp()
 
   await msg.delete().catch(O_o => {});
 
