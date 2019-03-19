@@ -1,4 +1,4 @@
-module.exports = (msg, args) => {
+module.exports = (client, msg, args) => {
 
   const message = args.join(" ");
 
