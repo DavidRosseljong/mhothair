@@ -37,7 +37,7 @@ module.exports.run = async (client, msg, args) => {
 
   await msg.channel.awaitMessages(message => {
 
-    switch(message.content) {
+    switch(message.content.toLowerCase()) {
 
       case 'social':
         msg.reply(socialMedia)
