@@ -56,6 +56,6 @@ module.exports.run = async (client, msg, args) => {
 
     };
 
-  });
+  }).catch(console.error);
 
 };
