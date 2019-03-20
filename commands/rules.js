@@ -1,6 +1,7 @@
 module.exports.run = async (client, msg, args) => {
 
-  const Discord = require('discord.js');
+  // Requiring Discord for RichEmbeds
+  const { RichEmbed } = require('discord.js');
 
 	// Delete Message
 	await msg.delete()
@@ -13,7 +14,7 @@ module.exports.run = async (client, msg, args) => {
 	const filter = (reaction, user) => ['✅', '❎'].includes(reaction.emoji.name) && user.id === msg.author.id;
 
 	// Message or Embed  
-  const rules = new Discord.RichEmbed()
+  const rules = new RichEmbed()
     .setTitle(`### ${msg.guild.name} Rules ###`)
 		.setDescription('Please follow our guidelines to have an awesome time together.')
 		.setDescription('1. Lorem Ipsum Dolor Sit Amet')
