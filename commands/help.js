@@ -1,5 +1,6 @@
 module.exports.run = async (client, msg, args) => {
 
+  // Requiring Discord for RichEmbeds
   const Discord = require('discord.js');
   
   //Message to send | Help Keywords
@@ -31,18 +32,24 @@ module.exports.run = async (client, msg, args) => {
     .addField('More Wood per Tree', 'www.valixx-online.de/more-wood-per-tree')
     .setTimestamp()
 
+  // Deleting the command from the bot after output
   await msg.delete().catch(O_o => {});
 
+  // Output a list of keywords
   msg.reply(helpKeywords);
 
+  // Waiting for the keywords
   await msg.channel.awaitMessages(message => {
 
+    // Convert the keywords to lowercase
     switch(message.content.toLowerCase()) {
 
+      // In case of the social keywords, output the social embed
       case 'social':
         msg.reply(socialMedia)
         break;
 
+      // In case of the mod keywords, output the mod embed
       case 'mods':
         msg.reply(modLinks);
         break;
