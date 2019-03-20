@@ -56,6 +56,8 @@ module.exports.run = async (client, msg, args) => {
 
     };
 
+    message.delete(30000);
+
   }).catch(console.error);
 
 };
