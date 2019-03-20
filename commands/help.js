@@ -24,11 +24,11 @@ module.exports.run = async (client, msg, args) => {
   const modLinks = new Discord.RichEmbed()
     .setTitle('Mod Links')
     .addBlankField()
-    .addField('RIFT')
+    .addField('RIFT', '')
     .addField('MofixUI', 'www.facebook.com/ValixxOnline')
     .addField('Notepad Reloaded', 'www.twitter.com/ValixxOnline')
     .addBlankField()
-    .addField('LIF: Forest Village')
+    .addField('LIF: Forest Village', '')
     .addField('More Wood per Tree', 'www.valixx-online.de/more-wood-per-tree')
     .setTimestamp()
 
@@ -46,7 +46,7 @@ module.exports.run = async (client, msg, args) => {
 
       // In case of the social keywords, output the social embed
       case 'social':
-        msg.reply(socialMedia)
+        msg.reply(socialMedia);
         break;
 
       // In case of the mod keywords, output the mod embed
