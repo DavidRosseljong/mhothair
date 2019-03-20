@@ -1,10 +1,10 @@
 module.exports.run = async (client, msg, args) => {
 
   // Requiring Discord for RichEmbeds
-  const Discord = require('discord.js');
+  const { RichEmbed } = require('discord.js');
   
   //Message to send | Help Keywords
-  const helpKeywords = new Discord.RichEmbed()
+  const helpKeywords = new RichEmbed()
     .setTitle('Keywords')
     .setDescription('Please use any of the keywords below.')
     .addBlankField()
@@ -13,7 +13,7 @@ module.exports.run = async (client, msg, args) => {
     .setTimestamp()
 
   //Message to send | Social Media Links
-  const socialMedia = new Discord.RichEmbed()
+  const socialMedia = new RichEmbed()
     .setTitle('Social Media')
     .addBlankField()
     .addField('Facebook', 'www.facebook.com/ValixxOnline')
@@ -21,7 +21,7 @@ module.exports.run = async (client, msg, args) => {
     .setTimestamp()
 
   //Message to send | Mod Links
-  const modLinks = new Discord.RichEmbed()
+  const modLinks = new RichEmbed()
     .setTitle('Mod Links')
     .addBlankField()
     .addField('RIFT', '----------')
