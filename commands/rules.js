@@ -1,25 +1,18 @@
 module.exports.run = async (client, msg, args) => {
 
-  const Discord = require('discord.js');
+  const { rules } = require('../inc/embeds/embeds');
 
 	// Delete Message
 	await msg.delete()
-		.catch(console.error);
+		.catch(err => {
+			console.log('Unable to delete message in rules command', err)
+		});
 		
 	// Get Roles
 	const role_registered = msg.guild.roles.find( role => role.name === "Registered");
 
 	// Filter
 	const filter = (reaction, user) => ['✅', '❎'].includes(reaction.emoji.name) && user.id === msg.author.id;
-
-	// Message or Embed  
-  const rules = new Discord.RichEmbed()
-    .setTitle(`### ${msg.guild.name} Rules ###`)
-		.setDescription('Please follow our guidelines to have an awesome time together.')
-		.setDescription('1. Lorem Ipsum Dolor Sit Amet')
-		.setDescription('2. Lorem Ipsum Dolor Sit Amet')
-    .addBlankField()
-    .setFooter('Please accept our guidelines and unlock the channels.')
 
 	// Send Message
 	msg.channel.send(rules)
