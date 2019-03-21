@@ -58,4 +58,4 @@ const helpKeyWords = new RichEmbed()
     .addField('A List of all my mods', 'mods')
     .setFooter(Math.floor(Date.now()));
 
-module.exports = { socialMedia, modLinks, modLinks2, rules, helpKeyWords }
+module.exports = { socialMedia, modLinks, modLinks2, helpKeyWords }
