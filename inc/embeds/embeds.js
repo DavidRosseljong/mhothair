@@ -49,7 +49,7 @@ const modLinks2 = new RichEmbed()
 
 
 // Help Keywords
-const helpKeyWords = new RichEmbed()
+const helpKeywords = new RichEmbed()
     .setTitle('Keywords')
     .setColor(0x00AE86)
     .setDescription('Please use any of the keywords below.')
@@ -58,4 +58,4 @@ const helpKeyWords = new RichEmbed()
     .addField('A List of all my mods', 'mods')
     .setFooter(Math.floor(Date.now()));
 
-module.exports = { socialMedia, modLinks, modLinks2, helpKeyWords }
+module.exports = { socialMedia, modLinks, modLinks2, helpKeywords }
