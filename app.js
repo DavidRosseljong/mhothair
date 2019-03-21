@@ -4,6 +4,9 @@ const { settings } = require('./inc/settings');
 const config = require('./config.json');
 const client = new Client();
 
+const env = require('dotenv');
+env.config();
+
 
 client.config = config;
 client.settings = settings;
