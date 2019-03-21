@@ -22,7 +22,7 @@ const modLinks = new RichEmbed()
     .setFooter(Math.floor(Date.now()));
 
 // Rules
-const rules = new Discord.RichEmbed()
+const rules = new RichEmbed()
     .setTitle(`~ ${msg.guild.name} Rules ~`)
     .setDescription('Please follow our guidelines to have an awesome time together.')
     .addField('1.', 'Do not spam channels or harass other members of the server. Along with that, no posting NSFW content in any channels.')
