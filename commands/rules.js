@@ -13,6 +13,7 @@ module.exports.run = async (client, msg, args) => {
 	const rules = new RichEmbed()
 		.setTitle(`~ ${msg.guild.name} Rules ~`)
 		.setDescription('Please follow our guidelines to have an awesome time together.')
+		.setColor(0x00AE86)
 		.addField('1.', 'Do not spam channels or harass other members of the server. Along with that, no posting NSFW content in any channels.')
 		.addField('2.', 'Use each channel for its respective purpose.')
 		.addField('3.', "Do not post any content or engage in any actions that violate Discord's Terms of Service: https://discordapp.com/terms")

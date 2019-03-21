@@ -4,6 +4,7 @@ const { RichEmbed } = require('discord.js');
 // Social Media
 const socialMedia = new RichEmbed()
     .setTitle('Social Media')
+    .setColor(0x00AE86)
     .addBlankField()
     .addField('Facebook', 'www.facebook.com/ValixxOnline')
     .addField('Twitter', 'www.twitter.com/ValixxOnline')
@@ -12,6 +13,7 @@ const socialMedia = new RichEmbed()
 // Mod Links
 const modLinks = new RichEmbed()
     .setTitle('Mod Links')
+    .setColor(0x00AE86)
     .addBlankField()
     .addField('RIFT', '----------')
     .addField('MofixUI', 'www.facebook.com/ValixxOnline')
@@ -24,6 +26,7 @@ const modLinks = new RichEmbed()
 // Help Keywords
 const helpKeyWords = new RichEmbed()
     .setTitle('Keywords')
+    .setColor(0x00AE86)
     .setDescription('Please use any of the keywords below.')
     .addBlankField()
     .addField('Social Media', 'social')
