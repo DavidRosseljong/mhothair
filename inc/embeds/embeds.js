@@ -8,6 +8,7 @@ const socialMedia = new RichEmbed()
     .addBlankField()
     .addField('Facebook', 'www.facebook.com/ValixxOnline')
     .addField('Twitter', 'www.twitter.com/ValixxOnline')
+    .addField('Patreon', 'www.patreon.com/ValixxOnline')
 
 // Mod Links
 const modLinks = new RichEmbed()
