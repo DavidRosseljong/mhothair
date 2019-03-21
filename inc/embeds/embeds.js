@@ -12,7 +12,7 @@ const socialMedia = new RichEmbed()
 
 // Mod Links
 const modLinks = new RichEmbed()
-    .setTitle('Mod Links')
+    .setTitle('Mod Links Part One')
     .setColor(0x00AE86)
     .addBlankField()
     .addField('RIFT', '----------')
@@ -32,6 +32,11 @@ const modLinks = new RichEmbed()
     .addBlankField()
     .addField('Arma 3', '----------')
     .addField('Sniper Firing Range', 'www.steamcommunity.com/sharedfiles/filedetails/?id=174869187')
+    .setFooter(Math.floor(Date.now()));
+
+const modLinks2 = new RichEmbed()
+    .setTitle('Mod Links Part Two')
+    .setColor(0x00AE86)
     .addBlankField()
     .addField('TESV: Skyrim', '----------')
     .addField('Essential Housecarls', 'www.nexusmods.com/skyrim/mods/48478')
@@ -41,6 +46,7 @@ const modLinks = new RichEmbed()
     .addField('Monaghan Camp', 'www.nexusmods.com/skyrim/mods/32927')
     .addField('Archery Neck and Ring for Hunters', 'www.nexusmods.com/skyrim/mods/33637')
     .setFooter(Math.floor(Date.now()));
+
 
 // Help Keywords
 const helpKeyWords = new RichEmbed()
@@ -52,4 +58,4 @@ const helpKeyWords = new RichEmbed()
     .addField('A List of all my mods', 'mods')
     .setFooter(Math.floor(Date.now()));
 
-module.exports = { socialMedia, modLinks, rules, helpKeyWords }
+module.exports = { socialMedia, modLinks, modLinks2, rules, helpKeyWords }

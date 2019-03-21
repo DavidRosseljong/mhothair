@@ -1,7 +1,7 @@
 module.exports.run = async (client, msg, args) => {
 
   // Import Embeds
-  const { helpKeywords, socialMedia, modLinks } = require('../inc/embeds/embeds')
+  const { helpKeywords, socialMedia, modLinks, modLinks2 } = require('../inc/embeds/embeds')
 
   // Deleting the command from the bot after output
   await msg.delete()
@@ -26,6 +26,7 @@ module.exports.run = async (client, msg, args) => {
       // In case of the mod keywords, output the mod embed
       case 'mods':
         msg.reply(modLinks);
+        msg.reply(modLinks2);
         break;
 
     };
