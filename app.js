@@ -1,12 +1,13 @@
-const Discord = require('discord.js');
+const { Client, Collection } = require('discord.js');
+const { settings } = require('./inc/settings');
+
 const config = require('./config.json');
-const settings = require('./inc/settings.js');
-const client = new Discord.Client();
+const client = new Client();
 
 
 client.config = config;
 client.settings = settings;
-client.commands = new Discord.Collection();
+client.commands = new Collection();
 
 
 client.commands.set('help', require('./commands/help.js'));
