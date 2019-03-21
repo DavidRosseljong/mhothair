@@ -3,6 +3,8 @@ let settings = {
   enabled_say: 'true',
   enabled_rules: 'true',
   enabled_purge: 'true',
+
+  bot_prefix: '!'
 };
 
 module.exports = settings;
