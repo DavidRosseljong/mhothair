@@ -21,18 +21,6 @@ const modLinks = new RichEmbed()
     .addField('More Wood per Tree', 'www.valixx-online.de/more-wood-per-tree')
     .setFooter(Math.floor(Date.now()));
 
-// Rules
-const rules = new RichEmbed()
-    .setTitle(`~ ${msg.guild.name} Rules ~`)
-    .setDescription('Please follow our guidelines to have an awesome time together.')
-    .addField('1.', 'Do not spam channels or harass other members of the server. Along with that, no posting NSFW content in any channels.')
-    .addField('2.', 'Use each channel for its respective purpose.')
-    .addField('3.', "Do not post any content or engage in any actions that violate Discord's Terms of Service: https://discordapp.com/terms")
-    .addField('4.', 'Do not advertise in any form unless specifically allowed in a channel or by the discretion of server staff.')
-    .addField('5.', 'If you need help use !help, ask in the #support channel or write @Valixx a message.')
-    .addBlankField()
-    .setFooter('Please accept our guidelines and unlock the channels.');
-
 // Help Keywords
 const helpKeyWords = new RichEmbed()
     .setTitle('Keywords')
