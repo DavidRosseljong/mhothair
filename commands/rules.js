@@ -39,7 +39,7 @@ module.exports.run = async (client, msg, args) => {
 			// Wait for reaction
 			message.awaitReactions(filter, {
 				max: 1,
-				time: 25000,
+				time: 60000,
 				errors: ['time']
 			})
 			.then(collected => {
@@ -70,13 +70,13 @@ module.exports.run = async (client, msg, args) => {
               .then(m => m.delete(15000));
 						break;
         }
-        message.delete(30000)
+        message.delete(60000)
 			})
 			.catch(err => {
         console.error(err);
         msg.channel.send('You have not reacted. Message will self destruct!')
           .then(m => m.delete(15000))
-        message.delete(30000);
+        //message.delete(30000);
       });
 
     });
