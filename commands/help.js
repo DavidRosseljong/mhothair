@@ -6,7 +6,7 @@ module.exports.run = async (client, msg, args) => {
   // Deleting the command from the bot after output
   await msg.delete()
     .catch(err => {
-      console.error('Unable to delete message in help command', err);
+      console.error('Unable to delete help command.', err);
     });
 
   // Output a list of keywords
@@ -20,21 +20,23 @@ module.exports.run = async (client, msg, args) => {
 
       // In case of the social keywords, output the social embed
       case 'social':
+        message.delete(2000);
         msg.reply(socialMedia);
         break;
 
       // In case of the mod keywords, output the mod embed
       case 'mods':
+        message.delete(2000);
         msg.reply(modLinks);
         msg.reply(modLinks2);
         break;
 
     };
 
-    msg.delete(30000);
+    message.delete(30000);
 
   }).catch(err => {
-    console.error('Unable to delete message after 30 seconds in help command', err);
+    console.error('Unable to delete message after 30 seconds in help command.', err);
   });
 
 };
