@@ -31,8 +31,8 @@ module.exports.run = async (client, msg, args) => {
 
     };
 
-  }).then(message => {
-    message.delete(30000);
+    msg.delete(30000);
+
   }).catch(err => {
     console.error('Unable to delete message after 30 seconds in help command', err);
   });
