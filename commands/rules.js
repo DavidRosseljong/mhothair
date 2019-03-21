@@ -1,5 +1,8 @@
 module.exports.run = async (client, msg, args) => {
 
+	// Requiring Discord for RichEmbeds
+	const { RichEmbed } = require('discord.js');
+
 	// Delete Message
 	await msg.delete()
 		.catch(err => {
