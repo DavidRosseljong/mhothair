@@ -8,7 +8,6 @@ const socialMedia = new RichEmbed()
     .addBlankField()
     .addField('Facebook', 'www.facebook.com/ValixxOnline')
     .addField('Twitter', 'www.twitter.com/ValixxOnline')
-    .setFooter(Math.floor(Date.now()));
 
 // Mod Links
 const modLinks = new RichEmbed()
@@ -32,7 +31,6 @@ const modLinks = new RichEmbed()
     .addBlankField()
     .addField('Arma 3', '----------')
     .addField('Sniper Firing Range', 'www.steamcommunity.com/sharedfiles/filedetails/?id=174869187')
-    .setFooter(Math.floor(Date.now()));
 
 const modLinks2 = new RichEmbed()
     .setTitle('Mod Links Part Two')
@@ -45,7 +43,6 @@ const modLinks2 = new RichEmbed()
     .addField('Improved Lower Hrothgar', 'www.nexusmods.com/skyrim/mods/49037')
     .addField('Monaghan Camp', 'www.nexusmods.com/skyrim/mods/32927')
     .addField('Archery Neck and Ring for Hunters', 'www.nexusmods.com/skyrim/mods/33637')
-    .setFooter(Math.floor(Date.now()));
 
 
 // Help Keywords
@@ -56,6 +53,5 @@ const helpKeywords = new RichEmbed()
     .addBlankField()
     .addField('Social Media', 'social')
     .addField('A List of all my mods', 'mods')
-    .setFooter(Math.floor(Date.now()));
 
 module.exports = { socialMedia, modLinks, modLinks2, helpKeywords }
