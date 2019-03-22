@@ -18,7 +18,6 @@ client.commands.set('rules', require('./commands/rules.js'));
 client.commands.set('purge', require('./commands/purge.js'));
 client.commands.set('kick', require('./commands/kick.js'));
 client.commands.set('say', require('./commands/say.js'));
-//client.commands.set('react', require('./commands/react.js'));
 
 
 
