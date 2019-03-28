@@ -1,26 +1,38 @@
 module.exports.run = async (client, msg, args) => {
 
-  // 👑 Admin role for my server.
-  if( !msg.member.roles.some(r => ["Administrator", "Admin", "Moderator", "Mod", "👑 Admin"].includes(r.name)) )
-    return msg.reply("Sorry, you don't have permissions to use this!");
+  // Importing settings
+  const { settings } = require('../inc/settings');
   
-  let member = msg.mentions.members.first() || msg.guild.members.get(args[0]);
+  // Check if settings are enabled
+  if (settings.enabled_kick) {
 
-  if( !member )
-    return msg.reply("Please mention a valid member of this server.");
+    // 👑 Admin role for my server.
+    if( !msg.member.roles.some(r => ["Administrator", "Admin", "Moderator", "Mod", "👑 Admin"].includes(r.name)) )
+      return msg.reply("Sorry, you don't have permissions to use this!");
+    
+    let member = msg.mentions.members.first() || msg.guild.members.get(args[0]);
 
-  if( !member.kickable ) 
-    return msg.reply("I can not kick this user! Do they have a higher role? Do I have kick permissions?");
-  
-  let reason = args.slice(1).join(' ');
+    if( !member )
+      return msg.reply("Please mention a valid member of this server.");
 
-  if( !reason ) reason = "No reason provided.";
-  
+    if( !member.kickable ) 
+      return msg.reply("I can not kick this user! Do they have a higher role? Do I have kick permissions?");
+    
+    let reason = args.slice(1).join(' ');
 
-  await member.kick(reason)
-    .catch(error => msg.reply(`Sorry ${msg.author} I couldn't kick because of : ${error}.`));
+    if( !reason ) reason = "No reason provided.";
+    
 
-  msg.reply(`${member.user.tag} has been kicked by ${msg.author.tag} because: ${reason}.`);
+    await member.kick(reason)
+      .catch(error => msg.reply(`Sorry ${msg.author} I couldn't kick because of : ${error}.`));
 
-  msg.delete(15000);
-}
+    msg.reply(`${member.user.tag} has been kicked by ${msg.author.tag} because: ${reason}.`);
+
+    msg.delete(15000);
+
+  } else {
+
+    msg.reply('Kick Command has been disabled. Please check your settings.')
+
+  };
+};
