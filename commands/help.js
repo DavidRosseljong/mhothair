@@ -1,63 +1,50 @@
 module.exports.run = async (client, msg, args) => {
 
-  // Requiring Discord for RichEmbeds
-  const { RichEmbed } = require('discord.js');
-  
-  //Message to send | Help Keywords
-  const helpKeywords = new RichEmbed()
-    .setTitle('Keywords')
-    .setDescription('Please use any of the keywords below.')
-    .addBlankField()
-    .addField('Social Media', 'social')
-    .addField('A List of all my mods', 'mods')
-    .setTimestamp()
+  // Importing settings
+  const { settings } = require('../inc/settings');
 
-  //Message to send | Social Media Links
-  const socialMedia = new RichEmbed()
-    .setTitle('Social Media')
-    .addBlankField()
-    .addField('Facebook', 'www.facebook.com/ValixxOnline')
-    .addField('Twitter', 'www.twitter.com/ValixxOnline')
-    .setTimestamp()
+  // Check if settings are enabled
+  if (settings.enabled_help) {
 
-  //Message to send | Mod Links
-  const modLinks = new RichEmbed()
-    .setTitle('Mod Links')
-    .addBlankField()
-    .addField('RIFT', '----------')
-    .addField('MofixUI', 'www.facebook.com/ValixxOnline')
-    .addField('Notepad Reloaded', 'www.twitter.com/ValixxOnline')
-    .addBlankField()
-    .addField('LIF: Forest Village', '----------')
-    .addField('More Wood per Tree', 'www.valixx-online.de/more-wood-per-tree')
-    .setTimestamp()
+    // Import Embeds
+    const { helpKeywords, socialMedia, modLinks, modLinks2 } = require('../inc/embeds/embeds')
 
-  // Deleting the command from the bot after output
-  await msg.delete().catch(O_o => {});
+    // Deleting the command from the bot after output
+    await msg.delete()
+      .catch(err => {
+        console.error('Unable to delete help command.', err);
+      });
 
-  // Output a list of keywords
-  msg.reply(helpKeywords);
+    // Output a list of keywords
+    msg.reply(helpKeywords);
 
-  // Waiting for the keywords
-  await msg.channel.awaitMessages(message => {
+    // Waiting for the keywords
+    await msg.channel.awaitMessages(message => {
 
-    // Convert the keywords to lowercase
-    switch(message.content.toLowerCase()) {
+      // Convert the keywords to lowercase
+      switch(message.content.toLowerCase()) {
 
-      // In case of the social keywords, output the social embed
-      case 'social':
-        msg.reply(socialMedia);
-        break;
+        // In case of the social keywords, output the social embed
+        case 'social':
+          message.delete(2000);
+          msg.reply(socialMedia);
+          break;
 
-      // In case of the mod keywords, output the mod embed
-      case 'mods':
-        msg.reply(modLinks);
-        break;
+        // In case of the mod keywords, output the mod embed
+        case 'mods':
+          message.delete(2000);
+          msg.reply(modLinks);
+          msg.reply(modLinks2);
+          break;
 
-    };
+      };
 
-    message.delete(30000);
+      message.delete(30000);
 
-  }).catch(console.error);
+    }).catch(err => {
+      console.error('Unable to delete message after 30 seconds in help command.', err);
+    });
+
+  };
 
 };
