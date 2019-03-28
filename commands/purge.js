@@ -1,5 +1,11 @@
 module.exports.run = async (client, msg, args) => {
-    // This command removes all messages from all users in the channel, up to 100.
+  // This command removes all messages from all users in the channel, up to 100.
+
+  // Importing settings
+  const { settings } = require('../inc/settings');
+  
+  // Check if settings are enabled
+  if (settings.enabled_purge) {
     
     // get the delete count, as an actual number.
     const deleteCount = parseInt(args[0], 10);
@@ -15,4 +21,7 @@ module.exports.run = async (client, msg, args) => {
     const fetched = await msg.channel.fetchMessages({limit: deleteCount});
     msg.channel.bulkDelete(fetched)
       .catch(error => msg.reply(`Couldn't delete messages because of: ${error}`));
-}
+
+  };
+
+};
