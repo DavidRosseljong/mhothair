@@ -10,6 +10,15 @@ const settings = {
   // Role to give if rules are accepted
   role_accepted_rules: 'Registered', // STRING - USE TEXT
 
+  // Roles for kick command permission
+  role_kick: {
+    admin: 'Administrator',
+    moderator: 'Moderator',
+
+    // Only for my server, you can delete this.
+    valixx_tv_admin: '👑 Admin'
+  },
+
   // Bot Prefix
   bot_prefix: '!' // STRING - USE TEXT
 

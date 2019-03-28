@@ -7,7 +7,7 @@ module.exports.run = async (client, msg, args) => {
   if (settings.enabled_kick) {
 
     // 👑 Admin role for my server.
-    if( !msg.member.roles.some(r => ["Administrator", "Admin", "Moderator", "Mod", "👑 Admin"].includes(r.name)) )
+    if( !msg.member.roles.some(r => [settings.role_kick.admin, settings.role_kick.moderator, settings.role_kick.valixx_tv_admin].includes(r.name)) )
       return msg.reply("Sorry, you don't have permissions to use this!");
     
     let member = msg.mentions.members.first() || msg.guild.members.get(args[0]);
