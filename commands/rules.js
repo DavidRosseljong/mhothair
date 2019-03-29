@@ -1,5 +1,11 @@
 module.exports.run = async (client, msg, args) => {
 
+	/*
+	 *
+	 * Declarations
+	 * 
+	 */
+
 	// Requiring Discord for RichEmbeds
 	const { RichEmbed } = require('discord.js');
 	// Importing settings
@@ -8,7 +14,6 @@ module.exports.run = async (client, msg, args) => {
 	const role_to_give = msg.guild.roles.find(role => role.name === settings.role_accepted_rules);
 
 	/*
-	 *
 	 *
 	 * Embeds
 	 * 
@@ -34,7 +39,6 @@ module.exports.run = async (client, msg, args) => {
 		.setTimestamp()
 
 	/*
-	 *
 	 *
 	 * Main Code
 	 * 
