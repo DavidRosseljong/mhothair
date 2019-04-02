@@ -1,6 +1,6 @@
 module.exports = (client) => {
 
-  const { connection, connect } = require('../inc/connection');
+  const { connect } = require('../inc/connection');
 
   connect();
 
