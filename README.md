@@ -46,7 +46,7 @@ All settings can be changed in [./inc/settings.js](https://github.com/DavidRosse
 
     };
 
-module.exports.settings = settings;
+    module.exports.settings = settings;
 
 ## NPM Packages
 
