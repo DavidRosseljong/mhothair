@@ -5,35 +5,39 @@ let connection = null;
 
 
 function connect() {
-  connection = mysql.createConnection({
+  connection = mysql.createPool({
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
-    database: process.env.DB_NAME
-  });
-
-  connection.connect(err => {
-    if (err) throw err;
-    console.log('Database connected.')
+    database: process.env.DB_NAME,
+    connectionLimit: 100
   });
 };
 
 function query(msg) {
 
-  connection.query(`SELECT * FROM xp WHERE id = '${msg.author.id}'`, (err, rows) => {
+  connection.getConnection(function(err, connection) {
+    // We are not connected.
     if (err) throw err;
-    console.log(rows);
-    let sql;
 
-    if (rows.length < 1) {
-      sql = `INSERT INTO xp (id, xp) VALUES ('${msg.author.id}', ${generate_xp()})`;
-    } else {
-      let xp = rows[0].xp;
-      sql = `UPDATE xp SET xp = ${xp + generate_xp()} WHERE id = '${msg.author.id}'`;
-    };
+    // Using the connection
+    connection.query(`SELECT * FROM xp WHERE id = '${msg.author.id}'`, (err, rows) => {
+      if (err) throw err;
 
-    connection.query(sql);
+      // Insert or update the database with new id/xp amount.
+      let sql;
+      if (rows.length < 1) {
+        sql = `INSERT INTO xp (id, xp) VALUES ('${msg.author.id}', ${generate_xp()})`;
+      } else {
+        let xp = rows[0].xp;
+        sql = `UPDATE xp SET xp = ${xp + generate_xp()} WHERE id = '${msg.author.id}'`;
+      };
+      connection.query(sql);
 
+      // Release the connection after we are done.
+      connection.release();
+
+    });
   });
 }
 
