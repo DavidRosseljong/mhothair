@@ -6,12 +6,12 @@ env.config();
 
 
 client.commands = new Collection();
-client.commands.set('help', require('./commands/help.js'));
-client.commands.set('rules', require('./commands/rules.js'));
-client.commands.set('purge', require('./commands/purge.js'));
-client.commands.set('kick', require('./commands/kick.js'));
-client.commands.set('say', require('./commands/say.js'));
-client.commands.set('xp', require('./commands/get_xp.js'));
+client.commands.set('help', require('./commands/help'));
+client.commands.set('rules', require('./commands/rules'));
+client.commands.set('purge', require('./commands/purge'));
+client.commands.set('kick', require('./commands/kick'));
+client.commands.set('say', require('./commands/say'));
+client.commands.set('xp', require('./commands/xp'));
 
 
 

@@ -52,9 +52,7 @@ function get_xp(msg, args) {
     if (!rows[0]) return msg.channel.send('This user has not gathered any XP.');
 
     let xp = rows[0].xp;
-
-    if (msg.content !== (`${settings.bot_prefix}xp del`))
-      msg.channel.send(`You have ${xp} XP.`);
+    msg.channel.send(`You have ${xp} XP.`);
   });
 
 };
@@ -66,20 +64,16 @@ function delete_xp(msg, args) {
 
   let target = msg.mentions.users.first() || msg.guild.members.get(args[1]) || msg.author;
 
-  if (msg.content === (`${settings.bot_prefix}xp del`)) {
-    connection.query(`SELECT * FROM xp WHERE id = '${msg.author.id}'`, (err, rows) => {
-      if (err) throw err;
-      
-      if (rows.length < 1) {
-        msg.channel.send('You have not gathered any XP.')
-      } else {
-        connection.query(`UPDATE xp SET xp = ${xp = 0} WHERE id = '${target.id}'`);
-        msg.channel.send(`${msg.author}, your XP have been deleted.`);
-      }
-    });
-  } else {
-    return;
-  };
+  connection.query(`SELECT * FROM xp WHERE id = '${msg.author.id}'`, (err, rows) => {
+    if (err) throw err;
+    
+    if (rows.length < 1) {
+      msg.channel.send('You have not gathered any XP.')
+    } else {
+      connection.query(`UPDATE xp SET xp = ${xp = 0} WHERE id = '${target.id}'`);
+      msg.channel.send(`${msg.author}, your XP have been deleted.`);
+    }
+  });
 
 };
 
