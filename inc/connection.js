@@ -52,7 +52,9 @@ function get_xp(msg, args) {
     if (!rows[0]) return msg.channel.send('This user has not gathered any XP.');
 
     let xp = rows[0].xp;
-    msg.channel.send(`You have ${xp} XP.`);
+
+    if (msg.content !== (`${settings.bot_prefix}xp del`))
+      msg.channel.send(`You have ${xp} XP.`);
   });
 
 };
