@@ -15,7 +15,6 @@ module.exports = (client, msg) => {
     query(msg);
   } else {
     let cmd = client.commands.get(command.slice(settings.bot_prefix.length));
-
     if (cmd) cmd.run(client, msg, args);
   }
 };
