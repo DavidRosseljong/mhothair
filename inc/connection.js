@@ -41,7 +41,7 @@ function query(msg) {
   });
 }
 
-function xp(msg, args) {
+function get_xp(msg, args) {
 
   let target = msg.mentions.users.first() || msg.guild.members.get(args[1]) || msg.author;
 
@@ -56,4 +56,4 @@ function xp(msg, args) {
 
 }
 
-module.exports = { connect, query, xp };
+module.exports = { connect, query, get_xp };
