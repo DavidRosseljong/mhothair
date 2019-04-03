@@ -1,12 +1,20 @@
 module.exports.run = async (client, msg, args) => {
 
-  // Saving the message from user
-  const newMessage = args.join(" ");
+   // Importing settings
+  const { settings } = require('../inc/settings');
 
-  // Deleting the command
-  msg.delete().catch(O_o=>{});
+  // Check if settings are enabled
+  if (settings.enabled_say) {
 
-  // Send the message to the channel as bot
-  msg.channel.send(newMessage);
+    // Saving the message from user
+    const newMessage = args.join(" ");
+
+    // Deleting the command
+    msg.delete().catch(O_o=>{});
+
+    // Send the message to the channel as bot
+    msg.channel.send(newMessage);
+  
+  };
 
 };
