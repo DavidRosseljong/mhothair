@@ -46,6 +46,24 @@ const modLinks2 = new RichEmbed()
     .addField('Archery Neck and Ring for Hunters', 'www.nexusmods.com/skyrim/mods/33637')
 
 
+// Bot Commands
+const botCommands = new RichEmbed()
+    .setTitle('Bot Commands')
+    .setColor(0x00AE86)
+    .setDescription('A list of all bot commands.')
+    .addBlankField()
+    .addField('User Commands', 'Commands for every user.')
+    .addField('!help', 'Get help by using specific keywords.')
+    .addField('!rules', "Get all server rules and a possibility to accept them. You'll then be added to a new role and unlock channels.")
+    .addField('!xp', 'Get the amount of XP you gathered on the server.')
+    .addBlankField()
+    .addField('Admin Commands', 'Commands for Admins and Mods.')
+    .addField('!say "something"', 'Say "something" as the Bot.')
+    .addField('!xp del', 'Delete your XP amount.')
+    .addField('!purge "number"', 'Purge "number" of text messages.')
+    .addField('!kick "user"', 'Kick "user" from the server.')
+
+
 // Help Keywords
 const helpKeywords = new RichEmbed()
     .setTitle('Keywords')
@@ -54,5 +72,6 @@ const helpKeywords = new RichEmbed()
     .addBlankField()
     .addField('Social Media', 'social')
     .addField('A List of all my mods', 'mods')
+    .addField('Bot Commands', 'commands')
 
-module.exports = { socialMedia, modLinks, modLinks2, helpKeywords }
+module.exports = { socialMedia, modLinks, modLinks2, botCommands, helpKeywords }

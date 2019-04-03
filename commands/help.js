@@ -7,7 +7,7 @@ module.exports.run = async (client, msg, args) => {
   if (settings.enabled_help) {
 
     // Import Embeds
-    const { helpKeywords, socialMedia, modLinks, modLinks2 } = require('../inc/embeds/embeds')
+    const { helpKeywords, socialMedia, modLinks, modLinks2, botCommands } = require('../inc/embeds/embeds')
 
     // Deleting the command from the bot after output
     await msg.delete()
@@ -35,6 +35,12 @@ module.exports.run = async (client, msg, args) => {
           message.delete(2000);
           msg.reply(modLinks);
           msg.reply(modLinks2);
+          break;
+
+        // In case of the command keywords, output bot commands embed
+        case 'commands':
+          message.delete(2000);
+          msg.reply(botCommands);
           break;
 
       };
