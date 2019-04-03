@@ -19,6 +19,8 @@ Prefix: !
 * !xp del
 * !say
 * !purge
+* !music
+* !music stop
 
 ## Settings
 
@@ -59,6 +61,8 @@ Mhothair wouldn't be possible without your packages. Thanks!
 * [discord.js](https://www.npmjs.com/package/discord.js) ( Discord API )
 * [mysql](https://www.npmjs.com/package/mysql) ( MySQL Connections )
 * [dotenv](https://www.npmjs.com/package/dotenv) ( Only for local environment )
+* [node-opus](https://www.npmjs.com/package/node-opus) ( For the sound to work )
+* [ytdl-core](https://www.npmjs.com/package/ytdl-core) ( To extract music from youtube-videos )
 
 ## Support & Requests
 
