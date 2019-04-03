@@ -4,8 +4,6 @@ module.exports.run = async (client, msg, args) => {
   const { settings } = require('../inc/settings');
   // Importing ytdl-core
   const ytdl = require('ytdl-core');
-  // Turn args into string
-  const argsToString = args.toString();
 
   // Check if settings are enabled
   if (settings.enabled_music) {
@@ -48,6 +46,9 @@ module.exports.run = async (client, msg, args) => {
 
     // Set the initial volume
     dispatcher.setVolume(0.2);
+
+    // Turn args into string
+    const argsToString = args.toString();
 
     // If the command is !music stop, then the bot leaves the channel
     if (argsToString === 'stop' && args !== '') {
