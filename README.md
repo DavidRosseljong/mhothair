@@ -1,5 +1,9 @@
 ![Mhothair Discord Bot Banner](https://i.david-rosseljong.com/mhothair/banner.jpg)
 
+[![Discord](https://img.shields.io/discord/472739529128804362.svg?style=flat-square)](https://discord.gg/mPKqEmT)
+[![Github](https://img.shields.io/github/last-commit/davidrosseljong/mhothair.svg?style=flat-square)](https://github.com/DavidRosseljong/mhothair)
+[![GitHub Dependencies](https://david-dm.org/davidrosseljong/mhothair.svg)](https://github.com/DavidRosseljong/mhothair)
+
 ## About Mhothair
 
 Mhothair is a Discord Bot, still in development as new features are added on a regular basis.
