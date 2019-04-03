@@ -20,7 +20,5 @@ module.exports.run = async (client, msg, args) => {
     // If 'del' args, use !xp del command to delete xp.
     if (argsToString === 'del' && args !== '') return delete_xp(msg, args);
 
-    msg.delete(10000)
-
   };
 };
