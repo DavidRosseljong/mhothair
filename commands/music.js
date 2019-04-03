@@ -37,11 +37,13 @@ module.exports.run = async (client, msg, args) => {
     // Get the url and play the music
     const dispatcher = connection.playStream(ytdl(args[0]))
       .on('end', () => {
-        console.log('The song has ended!');
+        msg.channel.send('Song is over. Leaving the channel and waiting for your command.');
+        msg.member.voiceChannel.leave();
+        msg.delete(10000);
+        return undefined;
       })
       .on('error', error => {
         console.error(error);
-        console.log(args);
       });
 
     // Set the initial volume
