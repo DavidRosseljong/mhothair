@@ -12,7 +12,7 @@ module.exports.run = async (client, msg, args) => {
     // Deleting the command from the bot after output
     await msg.delete()
       .catch(err => {
-        console.error('Unable to delete help command.', err);
+        console.error('Unable to delete !help command.', err);
       });
 
     // Output a list of keywords
@@ -48,7 +48,7 @@ module.exports.run = async (client, msg, args) => {
       message.delete(30000);
 
     }).catch(err => {
-      console.error('Unable to delete message after 30 seconds in help command.', err);
+      console.error('Unable to delete message after 30 seconds in !help command.', err);
     });
 
   };
