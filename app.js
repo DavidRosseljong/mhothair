@@ -12,6 +12,7 @@ client.commands.set('purge', require('./commands/purge'));
 client.commands.set('kick', require('./commands/kick'));
 client.commands.set('say', require('./commands/say'));
 client.commands.set('xp', require('./commands/xp'));
+client.commands.set('play', require('./commands/music'));
 
 
 
