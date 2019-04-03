@@ -32,7 +32,7 @@ module.exports.run = async (client, msg, args) => {
       console.error(`I could not join because: ${error}`);
     };
 
-    const dispatcher = connection.playStream(ytdl(args[1]))
+    const dispatcher = connection.playStream(ytdl(args[1].toString()))
       .on('end', () => {
         console.log('The song has ended!');
       })
