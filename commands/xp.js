@@ -5,6 +5,12 @@ module.exports.run = async (client, msg, args) => {
 
   if (settings.enabled_xp) {
 
+    // Deleting the command from the bot after output
+    await msg.delete()
+      .catch(err => {
+        console.error('Unable to delete !xp command.', err);
+      });
+
     // Turn args into string
     const argsToString = args.toString();
 
@@ -13,6 +19,8 @@ module.exports.run = async (client, msg, args) => {
     if (argsToString === '') return get_xp(msg, args);
     // If 'del' args, use !xp del command to delete xp.
     if (argsToString === 'del' && args !== '') return delete_xp(msg, args);
+
+    msg.delete(10000)
 
   };
 };
