@@ -1,4 +1,0 @@
-## TODO
-
-* Create new settings for xp command
-* Add user name to database
