@@ -41,7 +41,7 @@ module.exports.run = async (client, msg, args) => {
         console.log(args);
       });
 
-    dispatcher.setVolumeLogarithmic(5 / 5);
+    dispatcher.setVolume(0.2);
 
   
   };
