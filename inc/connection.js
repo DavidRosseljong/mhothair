@@ -61,6 +61,8 @@ function get_xp(msg, args) {
     // Output the user XP amount.
     let xp = rows[0].xp;
     msg.channel.send(`You have ${xp} XP.`);
+
+    msg.delete(10000);
   });
 
 };
@@ -86,6 +88,7 @@ function delete_xp(msg, args) {
       // If there is a user, set the XP amount to zero.
       connection.query(`UPDATE xp SET xp = ${xp = 0} WHERE id = '${target.id}'`);
       msg.channel.send(`${msg.author}, your XP have been deleted.`);
+      msg.delete(10000);
     }
   });
 
