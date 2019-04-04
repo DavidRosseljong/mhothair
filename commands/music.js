@@ -31,15 +31,15 @@ module.exports.run = async (client, msg, args) => {
 
     // Play link
     const dispatcher = connection.playStream(ytdl(args[0]))
-      .on('end', async msg => {
+      .on('end', async () => {
 
-        console.log(msg);
+        await msg.channel.send('Song is over. Leaving the channel and waiting for your command.')
+          .then(msg => {
+            console.log(msg);
+            msg.delete(10000);
+          });
 
-        // await msg.member.voiceChannel.leave();
-
-        // let msg = msg.channel.send('Song is over. Leaving the channel and waiting for your command.')
-
-        // msg.delete(10000);
+        msg.member.voiceChannel.leave();
 
       })
       .on('error', err => {
