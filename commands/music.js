@@ -15,7 +15,7 @@ module.exports.run = async (client, msg, args) => {
   if (!msg.member.voiceChannel) return msg.channel.send("I'm sorry. You're not in a voice channel.");
 
   // Check permissions
-  const permissions = voiceChannel.permissionsFor(msg.client.user);
+  const permissions = msg.member.voiceChannel.permissionsFor(msg.client.user);
 
   if (!permissions.has('CONNECT'))
     return msg.channel.send('I cannot connect to the voice channel. Please set the permissions accordingly.');
