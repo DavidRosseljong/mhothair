@@ -27,7 +27,7 @@ module.exports.run = async (client, msg, args) => {
   try {
 
     // Connect voice channel
-    const connection = await voiceChannel.join();
+    const connection = await msg.member.voiceChannel.join();
 
     // Play link
     const dispatcher = connection.playStream(ytdl(args[0]))
