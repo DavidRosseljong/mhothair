@@ -3,6 +3,7 @@
 [![Discord](https://img.shields.io/discord/472739529128804362.svg?label=Discord&style=flat-square)](https://discord.gg/mPKqEmT)
 [![Github](https://img.shields.io/github/last-commit/davidrosseljong/mhothair.svg?style=flat-square)](https://github.com/DavidRosseljong/mhothair)
 [![GitHub Dependencies](https://david-dm.org/davidrosseljong/mhothair.svg)](https://github.com/DavidRosseljong/mhothair)
+![License](https://img.shields.io/github/license/davidrosseljong/mhothair.svg?style=flat-square)
 
 ## About Mhothair
 
