@@ -29,30 +29,34 @@ module.exports.run = async (client, msg, args) => {
       console.error(`I could not join because: ${error}`);
     };
 
-    // Get the url and play the music
-    const dispatcher = connection.playStream(ytdl(args[0]))
-      .on('end', () => {
-        msg.channel.send('Song is over. Leaving the channel and waiting for your command.');
-        msg.member.voiceChannel.leave();
-        msg.delete(10000);
-        return undefined;
-      })
-      .on('error', error => {
-        console.error(error);
-      });
-
-    // Set the initial volume
-    dispatcher.setVolume(0.2);
-
     // Turn args into string
     const argsToString = args.toString();
 
     // If the command is !music stop, then the bot leaves the channel
-    if (argsToString === 'stop' && args !== '') {
+    if (args[0] === 'stop' && args !== '') {
 
       if (!msg.member.voiceChannel) return msg.channel.send('You are not in a voice channel');
       msg.member.voiceChannel.leave();
       return undefined;
+
+    };
+
+    if (args[0].startsWith('http') && args !== '') {
+
+      // Get the url and play the music
+      const dispatcher = connection.playStream(ytdl(args[0]))
+        .on('end', () => {
+          msg.channel.send('Song is over. Leaving the channel and waiting for your command.');
+          msg.member.voiceChannel.leave();
+          msg.delete(10000);
+          return undefined;
+        })
+        .on('error', error => {
+          console.error(error);
+        });
+
+      // Set the initial volume
+      dispatcher.setVolume(0.2);
 
     };
   
