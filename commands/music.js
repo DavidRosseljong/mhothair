@@ -8,24 +8,21 @@ module.exports.run = async (client, msg, args) => {
   // Check if settings are enabled
   if (settings.enabled_music) {
 
+    // Check if user is in a voice channel.
     const voiceChannel = msg.member.voiceChannel;
-
     if (!voiceChannel) return msg.channel.send("I'm sorry. You're not in a voice channel.");
 
+    // Check if the permissions are correct
     const permissions = voiceChannel.permissionsFor(msg.client.user);
 
     if (!permissions.has('CONNECT')) {
-
       return msg.channel.send('I cannot connect to the voice channel. Please set the permissions accordingly.');
-
     };
-
     if (!permissions.has('SPEAK')) {
-
       return msg.channel.send('I cannot speak in this voice channel. Please set the permissions accordingly.');
-
     };
 
+    // Try to connect to the voice channel.
     try {
       var connection = await voiceChannel.join();
     } catch (error) {
