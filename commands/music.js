@@ -29,19 +29,7 @@ module.exports.run = async (client, msg, args) => {
       console.error(`I could not join because: ${error}`);
     };
 
-    // Turn args into string
-    const argsToString = args.toString();
-
-    // If the command is !music stop, then the bot leaves the channel
-    if (args[0] === 'stop' && args !== '') {
-
-      if (!msg.member.voiceChannel) return msg.channel.send('You are not in a voice channel');
-      msg.member.voiceChannel.leave();
-      return undefined;
-
-    };
-
-    if (args[0].startsWith('http') && args !== '') {
+    if (args[0].startsWith('http') || args[0].startsWith('www') && args !== '') {
 
       // Get the url and play the music
       const dispatcher = connection.playStream(ytdl(args[0]))
@@ -59,7 +47,23 @@ module.exports.run = async (client, msg, args) => {
       dispatcher.setVolume(0.2);
 
     };
-  
+
+    // If the command is !music stop, then the bot leaves the channel
+    if (args[0] === 'stop' && args !== '') {
+
+      if (!msg.member.voiceChannel) return msg.channel.send('You are not in a voice channel');
+      msg.member.voiceChannel.leave();
+      return undefined;
+
+    };
+
+    // Give some help
+    if (!args[0]) {
+
+      msg.channel.send('Use !music "yt-link" or !music stop to command the bot.');
+
+    };
+
   };
 
 };
