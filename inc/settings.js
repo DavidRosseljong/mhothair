@@ -7,7 +7,7 @@ const settings = {
   enabled_purge: true, // BOOLEAN - TRUE OR FALSE
   enabled_help: true, // BOOLEAN - TRUE OR FALSE
   enabled_xp: true, // BOOLEAN - TRUE OR FALSE
-  enabled_music: false, // BOOLEAN - TRUE OR FALSE
+  enabled_music: true, // BOOLEAN - TRUE OR FALSE
 
   // Role to give if rules are accepted
   role_accepted_rules: 'Registered', // STRING - USE TEXT

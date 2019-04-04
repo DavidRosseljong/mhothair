@@ -1,11 +1,11 @@
 module.exports.run = async (client, msg, args) => {
 
+  // Check if command is enabled
+  if (!settings.enabled_music) return false;
+
   // Require Modules and other
   const ytdl = require('ytdl-core');
   const { settings } = require('../inc/settings');
-
-  // Check if command is enabled
-  if (!settings.enabled_music) return false;
 
   // Check for args
   if (!args[0]) return msg.channel.send('Use !music "yt-link" or !music stop to command the bot.');
