@@ -35,8 +35,10 @@ module.exports.run = async (client, msg, args) => {
 
         await msg.channel.send('Song is over. Leaving the channel and waiting for your command.')
           .then(msg => {
-            console.log(msg);
             msg.delete(10000);
+          })
+          .catch(err => {
+            console.error('Could not delete message\n', err);
           });
 
         msg.member.voiceChannel.leave();
