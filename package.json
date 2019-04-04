@@ -1,7 +1,7 @@
 {
   "name": "mhothair",
   "version": "1.0.0",
-  "description": "",
+  "description": "Mhothair is a Discord Bot, still in development as new features are added on a regular basis.",
   "main": "app.js",
   "scripts": {
     "start": "node app.js"
