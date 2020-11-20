@@ -18,7 +18,8 @@ const settings = {
     moderator: 'Moderator',
 
     // Only for my server, you can delete this.
-    valixx_tv_admin: '👑 Admin'
+    valixx_tv_admin: '👑 Admin',
+    havoc_admin: 'Gildenmeister'
   },
 
   // Bot Prefix
