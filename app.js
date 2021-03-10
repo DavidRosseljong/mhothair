@@ -19,8 +19,10 @@ client.commands.set('music', require('./commands/music'));
 
 
 client.on('message', msg => require('./events/message.js')(client, msg));
-client.on('ready', () => {roleClaim(client)});
-client.once('ready', () => require('./events/ready.js')(client));
+client.once('ready', () => {
+	require('./events/ready.js')(client)
+	roleClaim(client)
+})
 
 
 client.login(process.env.BOT_TOKEN);
