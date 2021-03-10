@@ -4,6 +4,8 @@ const client = new Client();
 const env = require('dotenv');
 env.config();
 
+const { roleClaim } = require('./inc/roles');
+
 
 client.commands = new Collection();
 client.commands.set('help', require('./commands/help'));
@@ -17,6 +19,7 @@ client.commands.set('music', require('./commands/music'));
 
 
 client.on('message', msg => require('./events/message.js')(client, msg));
+client.on('ready', () => {roleClaim(client)});
 client.once('ready', () => require('./events/ready.js')(client));
 
 
