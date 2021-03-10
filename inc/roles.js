@@ -3,37 +3,27 @@ const firstMessage = require('./embeds/first-message')
 module.exports = (client) => {
   const channelId = '819202903428169779'
 
-  const getEmoji = (emojiName) =>
-    client.emojis.cache.find((emoji) => emoji.name === emojiName)
-
   const emojis = {
-    man_mage: 'Raid',
-    man_zombie: 'Social',
+    "🧟‍♂️": 'Raid',
+    "🧙‍♂️": 'Social',
   }
 
-  const reactions = []
 
-  let emojiText = 'Wähle deine Rolle für die Gilde\n\n'
-  for (const key in emojis) {
-    const emoji = getEmoji(key)
-    reactions.push(emoji)
+  const emojiText = 'Um in der Gilde alle Member zu managen, wähle bitte deine Rolle aus.\nDies erleichert die Rollenverteilung im Spiel und wir können so auch eine feste Raidgruppe aufbauen.\n\nBist du 100% an beiden Raidtagen anwesend? Dann wähle den Raid-Emoji.\nWenn du gerne für alles Andere (Mythics, PvP, ... ) in der Gilde bist, dann wähle den Social-Emoji.\n\n🧟‍♂️ = Raid\n🧙‍♂️ = Social\n\n'
 
-    const role = emojis[key]
-    emojiText += `${emoji} = ${role}\n`
-  }
-
-  firstMessage(client, channelId, emojiText, reactions)
+  firstMessage(client, channelId, emojiText, ["🧙‍♂️", "🧟‍♂️"])
 
   const handleReaction = (reaction, user, add) => {
     if (user.id === '542667050917691404') {
       return
     }
 
-    const emoji = reaction._emoji.name
+    const name = reaction._emoji.name
 
     const { guild } = reaction.message
 
-    const roleName = emojis[emoji]
+    const roleName = emojis[name]
+    console.log(roleName);
     if (!roleName) {
       return
     }

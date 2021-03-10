@@ -1,10 +1,10 @@
-const { Client, Collection } = require('discord.js');
+const { Client, Collection, Emoji } = require('discord.js');
 const client = new Client();
 
 const env = require('dotenv');
 env.config();
 
-const { roleClaim } = require('./inc/roles');
+const roleClaim  = require('./inc/roles');
 
 
 client.commands = new Collection();
@@ -21,7 +21,7 @@ client.commands.set('music', require('./commands/music'));
 client.on('message', msg => require('./events/message.js')(client, msg));
 client.once('ready', () => {
 	require('./events/ready.js')(client)
-	roleClaim(client)
+	roleClaim(client, Emoji)
 })
 
 
