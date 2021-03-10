@@ -9,7 +9,7 @@ module.exports = (client) => {
   }
 
 
-  const emojiText = 'Um in der Gilde alle Member zu managen, wähle bitte deine Rolle aus.\nDies erleichert die Rollenverteilung im Spiel und wir können so auch eine feste Raidgruppe aufbauen.\n\nBist du 100% an beiden Raidtagen anwesend? Dann wähle den Raid-Emoji.\nWenn du gerne für alles Andere (Mythics, PvP, ... ) in der Gilde bist, dann wähle den Social-Emoji.\n\n🧟‍♂️ = Raid\n🧙‍♂️ = Social\n\n'
+  const emojiText = 'Um in der Gilde alle Member zu managen, wähle bitte deine Rolle aus.\nDies erleichert die Rollenverteilung im Spiel und wir können so auch eine feste Raidgruppe aufbauen.\nWähle bitte nur eine Rolle aus.\n\nBist du 100% an beiden Raidtagen anwesend und möchtest in die Raidstamm? Dann wähle den Raid-Emoji.\nWenn du nicht raiden möchtest, aber gerne für alles Andere (Mythics, PvP, ... ) in der Gilde bist, dann wähle den Social-Emoji.\n\n🧟‍♂️ = Raid\n🧙‍♂️ = Social\n\n'
 
   firstMessage(client, channelId, emojiText, ["🧙‍♂️", "🧟‍♂️"])
 
